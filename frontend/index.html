@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frontend - Teste</title>
+</head>
+<body>
+  <h1>Meu container docker em execução!!!</h1>
+  <button>Buscar mensagem</button>
+  <p id="mensagem"></p>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('button').click(function() {
+        $('#mensagem').text('Obtendo mensagem...');
+        $.get('/api/mensagem', function(data) {
+          $('#mensagem').text(data.mensagem);
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+          $('#mensagem').text('Erro ao obter mensagem: ' + textStatus);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+<!--
+
+apt-get update
+apt-get install -y curl
+
+-->
