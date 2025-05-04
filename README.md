@@ -5,6 +5,9 @@
 
 O projeto **REDIRECT-APACHE-DOCKER** é uma aplicação com dois containers: um frontend e um backend. O objetivo é permitir acesso externo apenas ao frontend, protegendo a api. O backend é acessível apenas pelo frontend.
 
+## Layout
+![Interface](images/interface.png)
+
 ## Funcionalidades
 
 -   Uma API backend em Flask 
